@@ -1,0 +1,52 @@
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 250px;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#sidebar.active~#mainContent {
+    margin-left: 250px;
+}
+
+#mainContent {
+    transition: 0.3s;
+}
+
+.appcontainer {
+    width: 100%;
+}
+
+.btn-stick-out {
+    transform: translateX(250px);
+    position: inherit;
+    top: 50%;
+}
+
+#sidebarToggle {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+}
+
+
+#sidebarToggle {
+    font-size: 24px;
+    vertical-align: middle;
+    transition: 0.3s;
+}
+
+#sidebarToggleIcon::before {
+    transition: 0.5s;
+}
+
+#sidebarToggleIcon.active::before {
+    transform: rotate(180deg);
+    transition: 0.5s;
+}
