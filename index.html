@@ -13,12 +13,14 @@
 
 <body>
     <div class="appcontainer row">
-        <div id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar active">
-            <button type="button" id="sidebarToggle" class="btn btn-lg btn-light rounded-circle btn-stick-out">
-                <i id="sidebarToggleIcon" class="bi bi-caret-left-fill text-secondary"></i>
-            </button>
+        <div id="sidebar" class="d-md-block bg-light sidebar active">
+            hello
+            hellooooooooooooooooooooooooooooooooo
         </div>
-        <div id="mainContent" role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 text-center">
+        <button type="button" id="sidebarToggle" class="btn btn-lg btn-light rounded-circle btn-stick-out">
+            <i id="sidebarToggleIcon" class="bi bi-caret-left-fill text-secondary"></i>
+        </button>
+        <div id="mainContent" role="main" class="col-12 ml-sm-auto px-md-4 text-center">
             <!-- Page content goes here -->
             hello
         </div>
@@ -30,9 +32,12 @@
         const sidebarToggle = document.getElementById('sidebarToggle');
         const sidebar = document.getElementById('sidebar');
         const sidebarToggleIcon = document.getElementById('sidebarToggleIcon');
+        const mainContent = document.getElementById('mainContent');
         sidebarToggle.addEventListener('click', () => {
             sidebar.classList.toggle('active');
             sidebarToggleIcon.classList.toggle('active');
+            sidebarToggle.classList.toggle('active');
+            mainContent.classList.toggle('active');
         });
     </script>
 </body>

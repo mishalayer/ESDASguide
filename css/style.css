@@ -1,10 +1,11 @@
 #sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -20%;
     height: 100%;
-    width: 250px;
+    width: 20%;
     transition: all 0.3s;
+    overflow-wrap: break-word;
 }
 
 #sidebar.active {
@@ -12,10 +13,11 @@
 }
 
 #sidebar.active~#mainContent {
-    margin-left: 250px;
+    margin-left: 20%;
 }
 
 #mainContent {
+    width: 80%;
     transition: 0.3s;
 }
 
@@ -24,8 +26,8 @@
 }
 
 .btn-stick-out {
-    transform: translateX(250px);
-    position: inherit;
+    margin-left: 23%;
+    position: fixed;
     top: 50%;
 }
 
@@ -33,13 +35,12 @@
     width: 50px;
     height: 50px;
     padding: 0;
+    font-size: 24px;
+    transition: 0.3s;
 }
 
-
-#sidebarToggle {
-    font-size: 24px;
-    vertical-align: middle;
-    transition: 0.3s;
+#sidebarToggle.active {
+    margin-left: 3%;
 }
 
 #sidebarToggleIcon::before {
@@ -49,4 +50,33 @@
 #sidebarToggleIcon.active::before {
     transform: rotate(180deg);
     transition: 0.5s;
+}
+
+#mainContent.active {
+    width: 100%;
+}
+
+@media only screen and (max-width:1127px) {
+    #sidebar {
+        left: -40%;
+        width: 40%;
+    }
+
+    #sidebar.active~#mainContent {
+        margin-left: 40%;
+    }
+
+    #mainContent {
+        width: 60%;
+    }
+
+    .btn-stick-out {
+        margin-left: 43%;
+    }
+
+    #sidebarToggle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
 }
