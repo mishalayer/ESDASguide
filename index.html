@@ -11,12 +11,12 @@
     <title>ESDAS guide</title>
 </head>
 
-<body data-bs-theme="dark">
+<body data-bs-theme="light">
     <a href="#">
         <button type="button" id="scrollUpButton"
-            class="btn btn-lg custom-button bg-light-subtle border-0 rounded-circle"
+            class="btn btn-lg custom-button bg-light-subtle border-0 rounded-circle custom-hoverable-button-icon"
             style="opacity: 0; visibility: hidden;">
-            <i id="scrollUpButtonIcon" class="bi bi-caret-up-fill text-secondary"></i>
+            <i id="scrollUpButtonIcon" class="bi bi-caret-up-fill"></i>
         </button>
     </a>
     <div class="appcontainer">
@@ -25,30 +25,42 @@
                 class="d-flex bg-light-subtle p-1 text-center align-items-center justify-content-center">
                 <a href="/" class="nav-link"><span><i class="bi bi-book-half"></i> ESDAS
                         სახელმძღვანელო</span></a>
-                <button id="themeButton" onClick="themeFunction()">Hehe</button>
             </div>
 
             <div class="sidebarNavigation">
                 <div class="list-group">
-                    <a href="#" class="nav-link list-group-item py-3">
+                    <a href="#" class="nav-link list-group-item py-3 custom-hoverable-item">
                         hello
                     </a>
-                    <a href="#" class="nav-link list-group-item py-3">
+                    <a href="#" class="nav-link list-group-item py-3 custom-hoverable-item">
                         hello
                     </a>
-                    <a href="#" class="nav-link list-group-item py-3">
+                    <a href="#" class="nav-link list-group-item py-3 custom-hoverable-item">
                         hello
                     </a>
                 </div>
             </div>
         </div>
         <button type="button" id="sidebarToggle"
-            class="btn btn-lg custom-button border-0 bg-light-subtle rounded-circle btn-stick-out active">
-            <i id="sidebarToggleIcon" class="bi bi-caret-left-fill text-secondary"></i>
+            class="btn btn-lg custom-button border-0 bg-light-subtle rounded-circle btn-stick-out active-custom custom-hoverable-button-icon">
+            <i id="sidebarToggleIcon" class="bi bi-caret-left-fill"></i>
         </button>
-        <div id="mainContent" role="main" class="row">
-            <div class="col-12 my-5 ml-sm-auto px-md-4 text-center">
-                <!-- Page content goes here -->
+        <div id="mainContentHeader" class="d-flex align-items-center px-3 custom-whitedark">
+            <button id="themeButton" onClick="themeFunction()" class="btn border-0 custom-hoverable-button-icon"><i
+                    id="themeButtonIcon" class="bi bi-sun-fill"></i></button>
+            <div class="dropdown-center">
+                <button class="btn custom-whitedark border-0 custom-hoverable-button-icon" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-type"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><input type="range" class="form-range" id="textSlider" value="1" min="1" max="3" step="1"></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mainContent" role="main" class="row justify-content-center">
+            <div id="textContainer" class="col-8 my-5 text-start">
+                <h1>Hello</h1>
                 hello
                 <br />
                 hello

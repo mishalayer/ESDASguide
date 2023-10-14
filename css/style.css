@@ -8,11 +8,27 @@
     overflow-wrap: break-word;
 }
 
+.text-large {
+    font-size: 30px;
+}
+
+.text-medium {
+    font-size: 24px;
+}
+
+.text-small {
+    font-size: 16px;
+}
+
 #sidebar.active {
     left: 0;
 }
 
 #sidebar.active~#mainContent {
+    margin-left: 20%;
+}
+
+#sidebar.active~#mainContentHeader {
     margin-left: 20%;
 }
 
@@ -28,12 +44,8 @@
     overflow-y: auto;
 }
 
-#themeButton {
-    position: absolute;
-    right: 10px;
-}
-
 #mainContent {
+    padding-top: 50px;
     width: 80%;
     transition: 0.3s;
 }
@@ -56,7 +68,7 @@
     transition: 0.3s;
 }
 
-#sidebarToggle.active {
+#sidebarToggle.active-custom {
     margin-left: 23%;
 }
 
@@ -73,6 +85,17 @@
     width: 100%;
 }
 
+#mainContentHeader {
+    position: fixed;
+    height: 50px;
+    width: 80%;
+    transition: 0.3s;
+}
+
+#mainContentHeader.active {
+    width: 100%;
+}
+
 #scrollUpButton {
     width: 50px;
     height: 50px;
@@ -84,12 +107,59 @@
     transition: 0.5s;
 }
 
+.custom-hoverable-item {
+    transition: 0.3s;
+}
+
+.custom-hoverable-button-icon {
+    color: #6c757d;
+    transition: 0.3s;
+}
+
+.custom-whitedark {
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+}
+
+/* theme dependant styles */
+
+[data-bs-theme="light"] .custom-hoverable-item:hover {
+    filter: brightness(0.9);
+}
+
+[data-bs-theme="dark"] .custom-hoverable-item:hover {
+    filter: brightness(1.2);
+}
+
+[data-bs-theme="light"] .custom-list-item.current {
+    filter: brightness(0.9);
+}
+
+[data-bs-theme="dark"] .custom-list-item.current {
+    filter: brightness(1.2);
+}
+
+[data-bs-theme="light"] .custom-whitedark {
+    background-color: #FFFFFF;
+}
+
+[data-bs-theme="dark"] .custom-whitedark {
+    background-color: #212529;
+}
+
 [data-bs-theme="light"] .custom-button:hover {
     filter: brightness(0.9);
 }
 
 [data-bs-theme="dark"] .custom-button:hover {
     filter: brightness(1.2);
+}
+
+[data-bs-theme="light"] .custom-hoverable-button-icon:hover {
+    color: #212529;
+}
+
+[data-bs-theme="dark"] .custom-hoverable-button-icon:hover {
+    color: white;
 }
 
 @media only screen and (max-width:1127px) {
@@ -102,11 +172,19 @@
         margin-left: 40%;
     }
 
+    #sidebar.active~#mainContentHeader {
+        margin-left: 40%;
+    }
+
     #mainContent {
         width: 60%;
     }
 
-    #sidebarToggle.active {
+    #mainContentHeader {
+        width: 60%;
+    }
+
+    #sidebarToggle.active-custom {
         margin-left: 43%;
     }
 
