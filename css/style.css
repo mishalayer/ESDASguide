@@ -1,3 +1,7 @@
+body {
+    transition: 0.3s;
+}
+
 #sidebar {
     position: fixed;
     top: 0;
@@ -6,6 +10,7 @@
     width: 20%;
     transition: all 0.3s;
     overflow-wrap: break-word;
+    z-index: 2;
 }
 
 .text-large {
@@ -37,6 +42,7 @@
     height: 80px;
     font-size: 20px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .sidebarNavigation {
@@ -140,6 +146,20 @@
     background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236c757d' class='bi bi-caret-down-fill' viewBox='0 0 16 16'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") !important;
 }
 
+#dimmer {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    z-index: 1;
+    opacity: 0.5;
+    display: none;
+}
+
+.custom-button {
+    z-index: 2;
+}
+
 /* theme dependant styles */
 
 [data-bs-theme="light"] .custom-hoverable-item:hover {
@@ -204,28 +224,32 @@
 
 @media only screen and (max-width:1127px) {
     #sidebar {
-        left: -40%;
-        width: 40%;
+        left: -60%;
+        width: 60%;
     }
 
     #sidebar.active~#mainContent {
-        margin-left: 40%;
+        margin-left: 0;
     }
 
     #sidebar.active~#mainContentHeader {
-        margin-left: 40%;
+        margin-left: 0;
+    }
+
+    #sidebar.active~#dimmer {
+        display: block;
     }
 
     #mainContent {
-        width: 60%;
+        width: 100%;
     }
 
     #mainContentHeader {
-        width: 60%;
+        width: 100%;
     }
 
     #sidebarToggle.active-custom {
-        margin-left: 43%;
+        margin-left: 63%;
     }
 
     #sidebarToggle {
@@ -241,6 +265,18 @@
     }
 
     #sidebarTop {
+        font-size: 14px;
+    }
+
+    .text-large {
+        font-size: 24px;
+    }
+
+    .text-medium {
+        font-size: 18px;
+    }
+
+    .text-small {
         font-size: 14px;
     }
 }

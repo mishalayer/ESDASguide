@@ -1,4 +1,5 @@
 const sidebarToggle = document.getElementById('sidebarToggle');
+const dimmerToggle = document.getElementById('dimmer');
 const sidebar = document.getElementById('sidebar');
 const sidebarToggleIcon = document.getElementById('sidebarToggleIcon');
 const mainContent = document.getElementById('mainContent');
@@ -11,7 +12,6 @@ const wholeBody = document.body;
 //Local storage variables
 const savedFontSize = localStorage.getItem('fontSize');
 const savedTheme = localStorage.getItem('theme');
-const savedSidebarState = localStorage.getItem('sidebar');
 
 onPageLoad();
 
@@ -21,12 +21,26 @@ sidebarToggle.addEventListener('click', () => {
     sidebarToggle.classList.toggle('active-custom');
     mainContent.classList.toggle('active');
     mainContentHeader.classList.toggle('active');
-    if (savedSidebarState == 'closed') {
+    if (localStorage.getItem('sidebar') == 'closed') {
         localStorage.setItem('sidebar', 'open');
     } else {
         localStorage.setItem('sidebar', 'closed');
     }
 });
+
+dimmerToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+    sidebarToggleIcon.classList.toggle('active');
+    sidebarToggle.classList.toggle('active-custom');
+    mainContent.classList.toggle('active');
+    mainContentHeader.classList.toggle('active');
+    if (localStorage.getItem('sidebar') == 'closed') {
+        localStorage.setItem('sidebar', 'open');
+    } else {
+        localStorage.setItem('sidebar', 'closed');
+    }
+});
+
 window.addEventListener('scroll', function () {
     if (document.documentElement.scrollTop > 100) {
         scrollUpButton.style.opacity = '100%';
@@ -88,24 +102,13 @@ function onPageLoad() {
             themeButtonIcon.classList.toggle('bi-moon-fill');
         }
     }
-    if (savedSidebarState) {
-        if (savedSidebarState == 'closed') {
-            sidebar.classList.toggle('active');
-            sidebarToggleIcon.classList.toggle('active');
-            sidebarToggle.classList.toggle('active-custom');
-            mainContent.classList.toggle('active');
-            mainContentHeader.classList.toggle('active');
-        }
+    if (localStorage.getItem('sidebar') == 'closed') {
+        sidebar.classList.toggle('active');
+        sidebarToggleIcon.classList.toggle('active');
+        sidebarToggle.classList.toggle('active-custom');
+        mainContent.classList.toggle('active');
+        mainContentHeader.classList.toggle('active');
+    } else {
+        localStorage.setItem('sidebar', 'open');
     }
 }
-
-// localStorage.setItem('fontSize', '16px');
-// localStorage.setItem('theme', 'light');
-
-// // Retrieve user preferences
-
-// // Apply user preferences
-// if (savedFontSize) {
-//     // Apply the saved font size to your content
-//     document.body.style.fontSize = savedFontSize;
-// }
