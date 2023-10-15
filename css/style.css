@@ -113,6 +113,10 @@ body {
     transition: 0.5s;
 }
 
+.single-list-item {
+    padding: 20px;
+}
+
 .custom-list-group {
     border-radius: 0;
 }
