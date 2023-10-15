@@ -11,6 +11,7 @@ const wholeBody = document.body;
 //Local storage variables
 const savedFontSize = localStorage.getItem('fontSize');
 const savedTheme = localStorage.getItem('theme');
+const savedSidebarState = localStorage.getItem('sidebar');
 
 onPageLoad();
 
@@ -20,6 +21,11 @@ sidebarToggle.addEventListener('click', () => {
     sidebarToggle.classList.toggle('active-custom');
     mainContent.classList.toggle('active');
     mainContentHeader.classList.toggle('active');
+    if (savedSidebarState == 'closed') {
+        localStorage.setItem('sidebar', 'open');
+    } else {
+        localStorage.setItem('sidebar', 'closed');
+    }
 });
 window.addEventListener('scroll', function () {
     if (document.documentElement.scrollTop > 100) {
@@ -80,6 +86,15 @@ function onPageLoad() {
             wholeBody.dataset.bsTheme = 'dark';
             themeButtonIcon.classList.toggle('bi-sun-fill');
             themeButtonIcon.classList.toggle('bi-moon-fill');
+        }
+    }
+    if (savedSidebarState) {
+        if (savedSidebarState == 'closed') {
+            sidebar.classList.toggle('active');
+            sidebarToggleIcon.classList.toggle('active');
+            sidebarToggle.classList.toggle('active-custom');
+            mainContent.classList.toggle('active');
+            mainContentHeader.classList.toggle('active');
         }
     }
 }
