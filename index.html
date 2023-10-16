@@ -31,6 +31,37 @@
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed custom-hoverable-item custom-accordion"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#chapter-0"
+                                aria-expanded="false" aria-controls="flush-collapseOne">
+                                ზოგადი ფუნქციონალი
+                            </button>
+                        </h2>
+                        <div id="chapter-0" class="accordion-collapse collapse" data-bs-parent="#chapter">
+                            <div class="accordion-body p-0">
+                                <div class="list-group border-0 custom-list-group">
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        რეგისტრაცია
+                                    </a>
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        ავტორიზაცია
+                                    </a>
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        პარამეტრების ცვლილება
+                                    </a>
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        შეტყობინებები
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed custom-hoverable-item custom-accordion"
                                 type="button" data-bs-toggle="collapse" data-bs-target="#chapter-1"
                                 aria-expanded="false" aria-controls="flush-collapseOne">
                                 შესაბამისობის შემფასებელი ორგანო
@@ -127,12 +158,13 @@
             <button id="themeButton" onClick="themeFunction()" class="btn border-0 custom-hoverable-button-icon"><i
                     id="themeButtonIcon" class="bi bi-sun-fill"></i></button>
             <div class="dropdown-center">
-                <button class="btn custom-whitedark border-0 custom-hoverable-button-icon" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn border-0 custom-hoverable-button-icon" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     <i class="bi bi-type"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><input type="range" class="form-range" id="textSlider" value="1" min="1" max="3" step="1">
+                    <li class="d-flex justify-content-center">
+                        <input type="range" class="form-range" id="textSlider" value="1" min="1" max="3" step="1">
                     </li>
                 </ul>
             </div>
@@ -142,12 +174,14 @@
                 <!--Main content goes here. h1 for titles, <p> for regular text-->
                 <h1 class="text-center fw-bold">აკრედიტაციის სერვისების დიგიტალიზაციის
                     ელექტრონული სისტემის მომხმარებლის
-                    სახელმძღვანელო</h1>
+                    გზამკვლევი</h1>
                 <br>
                 <p>მოგესალმებით, ეს გახლავთ საქართველოს აკრედიტაციის ცენტრის აკრედიტაციის სერვისების დიგიტალიზაციის
-                    ელექტრონული სისტემის მომხმარებლის სახელმძღვანელო.
-                    მისამართი: <a href="https://esdas.gac.gov.ge" target="_blank">https://esdas.gac.gov.ge</a></p>
-                <p>გთხოვთ აირჩიოთ თქვენთვის საჭირო მომხმარებლის სექცია: </p>
+                    ელექტრონული სისტემის მომხმარებლის გზამკვლევი.</p>
+                <p>მისამართი: <a href="https://esdas.gac.gov.ge" target="_blank">https://esdas.gac.gov.ge</a></p>
+                <p>გთხოვთ აირჩიოთ თქვენთვის საჭირო სექცია: </p>
+                <p><a href="">ზოგადი ფუნქციონალი</a> - რეგისტრაცია, ავტორიზაცია, პაროლის ცვლილება და სხვა ფუნქციონალი,
+                    რომელიც საერთოა ყველა მომხმარებლისთვის</p>
                 <p><a href="">შესაბამისობის შემფასებელი ორგანო (შშო)</a></p>
                 <p><a href="termdef.html">ტერმინთა განმარტება & ზოგადი აღწერა</a></p>
                 <!--Main content ends here-->
