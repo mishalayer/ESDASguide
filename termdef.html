@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="favicon.ico" href="components/ESDASguidefavicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -20,14 +21,45 @@
         </button>
     </a>
     <div class="appcontainer">
-        <div id="sidebar" class="bg-light-subtle sidebar active">
+        <div id="sidebar" class="bg-light-subtle sidebar active custom-transition">
             <div id="sidebarTop"
-                class="d-flex bg-light-subtle py-1 px-2 text-center align-items-center justify-content-center">
+                class="d-flex bg-light-subtle py-1 px-2 text-center align-items-center justify-content-center custom-transition">
                 <a href="index.html" class="nav-link"><span><i class="bi bi-book-half"></i> ESDAS
                         სახელმძღვანელო</span></a>
             </div>
             <div class="sidebarNavigation">
                 <div class="accordion accordion-flush" id="chapter">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed custom-hoverable-item custom-accordion"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#chapter-0"
+                                aria-expanded="false" aria-controls="flush-collapseOne">
+                                ზოგადი ფუნქციონალი
+                            </button>
+                        </h2>
+                        <div id="chapter-0" class="accordion-collapse collapse" data-bs-parent="#chapter">
+                            <div class="accordion-body p-0">
+                                <div class="list-group border-0 custom-list-group">
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        რეგისტრაცია
+                                    </a>
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        ავტორიზაცია
+                                    </a>
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        პარამეტრების ცვლილება
+                                    </a>
+                                    <a href="#"
+                                        class="nav-link list-group-item py-3 ps-4 border-0 custom-hoverable-item">
+                                        შეტყობინებები
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed custom-hoverable-item custom-accordion"
@@ -127,12 +159,13 @@
             <button id="themeButton" onClick="themeFunction()" class="btn border-0 custom-hoverable-button-icon"><i
                     id="themeButtonIcon" class="bi bi-sun-fill"></i></button>
             <div class="dropdown-center">
-                <button class="btn custom-whitedark border-0 custom-hoverable-button-icon" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn border-0 custom-hoverable-button-icon" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
                     <i class="bi bi-type"></i>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><input type="range" class="form-range" id="textSlider" value="1" min="1" max="3" step="1">
+                    <li class="d-flex justify-content-center">
+                        <input type="range" class="form-range" id="textSlider" value="1" min="1" max="3" step="1">
                     </li>
                 </ul>
             </div>
@@ -140,22 +173,22 @@
         <div id="mainContent" role="main" class="row justify-content-center">
             <div id="textContainer" class="col-10 col-lg-8 my-5 text-justify">
                 <!--Main content goes here. h1 for titles, <p> for regular text-->
-                <h1>ტერმინთა განმარტება</h1>
-                <br>
-                <p><b>DES</b> - დოკუმენტბრუნვის ელექტრონული სისტემა</p>
-                <p><b>შშო</b> - შესაბამისობის შემფასებელი ორგანო</p>
-                <p><b>შიდა მომხმარებელი</b> - გენ.დირექტორი, დირექტორის მოადგილე, ხარისხის
-                    მენეჯერი, ადმინისტრაციული სამსახურის უფროსი, აკრედიტაციის სამსახურის
-                    უფროსი, იურისტი, ფინანსური მენეჯერი, სისტემის ადმინისტრატორი,
-                    შემფასებელთა ჯგუფის უფროსი</p>
-                <p><b>გარე მომხმარებელი</b> - შშო, გარე ტექნიკური ექსპერტი</p>
-                <br>
-                <h1>ზოგადი აღწერა</h1>
-                <p>აკრედიტაციის პროცესების დიგიტალიზაციის ელექტრონული სისტემის შექმნის
-                    მიზანია აკრედიტაციის პროცესების ეფექტურობის ამაღლება, დოკუმენტბრუნვის
-                    სისწრაფისა და სიზუსტის გაზრდის ხარჯზე, აგრეთვე აკრედიტაციის მიმდინარე
-                    პროცესებზე სისტემის მიერ ვადების გაკონტროლების გზით. ასევე სტატისტიკური
-                    მონაცემების შეგროვება და სხვადასხვა ჭრილში ინფორმაციის დამუშავება</p>
+                    <h1>ტერმინთა განმარტება</h1>
+                    <br>
+                    <p><b>DES</b> - დოკუმენტბრუნვის ელექტრონული სისტემა</p>
+                    <p><b>შშო</b> - შესაბამისობის შემფასებელი ორგანო</p>
+                    <p><b>შიდა მომხმარებელი</b> - გენ.დირექტორი, დირექტორის მოადგილე, ხარისხის
+                        მენეჯერი, ადმინისტრაციული სამსახურის უფროსი, აკრედიტაციის სამსახურის
+                        უფროსი, იურისტი, ფინანსური მენეჯერი, სისტემის ადმინისტრატორი,
+                        შემფასებელთა ჯგუფის უფროსი</p>
+                    <p><b>გარე მომხმარებელი</b> - შშო, გარე ტექნიკური ექსპერტი</p>
+                    <br>
+                    <h1>ზოგადი აღწერა</h1>
+                    <p>აკრედიტაციის პროცესების დიგიტალიზაციის ელექტრონული სისტემის შექმნის
+                        მიზანია აკრედიტაციის პროცესების ეფექტურობის ამაღლება, დოკუმენტბრუნვის
+                        სისწრაფისა და სიზუსტის გაზრდის ხარჯზე, აგრეთვე აკრედიტაციის მიმდინარე
+                        პროცესებზე სისტემის მიერ ვადების გაკონტროლების გზით. ასევე სტატისტიკური
+                        მონაცემების შეგროვება და სხვადასხვა ჭრილში ინფორმაციის დამუშავება</p>
                 <!--Main content ends here-->
             </div>
         </div>
