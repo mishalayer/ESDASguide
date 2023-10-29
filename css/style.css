@@ -168,6 +168,17 @@ body {
     z-index: 2;
 }
 
+.custom-image {
+    max-width: 95%;
+    max-height: 500px;
+}
+
+.custom-image-enlarged {
+    max-width: 85vw;
+    max-height: 85vh;
+    object-fit: contain;
+}
+
 /* theme dependant styles */
 
 [data-bs-theme="light"] .custom-hoverable-item:hover {
